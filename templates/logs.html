@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="jumbotron text-center">
+    <h1>Visitors Details</h1>
+</div>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+
+    <tr>
+        <th scope="col">S No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Date</th>
+        <th scope="col">Check In</th>
+        <th scope="col">Check Out</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for visitor in visitors %}
+    <tr>
+        <th scope="row">{{loop.index}}</th>
+        <td>{{visitor['name']}}</td>
+        <td>{{visitor['email']}}</td>
+        <td>{{visitor['number']}}</td>
+        <td>{{visitor['checkin']| datefilter}}</td>
+        <td>{{visitor['checkin']| ctime}}</td>
+        <td>{{visitor['checkout']| ctime}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

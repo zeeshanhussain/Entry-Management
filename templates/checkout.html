@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Check Out</h5>
+                    <form action="" class="form-signin" method="post">
+                        {{ form.hidden_tag() }}
+                        <div class="form-label-group">
+                            {% if form.email.errors %}
+                            {{ form.email(class="form-control is-invalid") }}
+                            <label for="inputEmail">Email</label>
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.email(class="form-control" , id="inputEmail" , placeholder="Email") }}
+                            <label for="inputEmail">Email</label>
+                            {% endif %}
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Check Out</button>
+                        <hr class="my-4">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

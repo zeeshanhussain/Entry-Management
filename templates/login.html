@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Login</h5>
+                    <form action="" class="form-signin" method="post">
+                        {{ form.hidden_tag() }}
+                        <div class="form-label-group">
+                            {% if form.email.errors %}
+                            {{ form.email(class="form-control is-invalid") }}
+                            <label for="inputEmail">Email</label>
+                            <div class="invalid-feedback">
+                                {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.email(class="form-control" , id="inputEmail" , placeholder="Email") }}
+                            <label for="inputEmail">Email</label>
+                            {% endif %}
+                        </div>
+                        <div class="form-label-group">
+                            {% if form.password.errors %}
+                            {{ form.password(class="form-control is-invalid") }}
+                            <label for="inputPass">Password</label>
+                            <div class="invalid-feedback">
+                                {% for error in form.password.errors %}
+                                <span>{{ error }}</span>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            {{ form.password(class="form-control" , id="inputPass" , placeholder="Password") }}
+                            <label for="inputPass">Password</label>
+                            {% endif %}
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Login</button>
+                        <hr class="my-4">
+                        <div>
+                            <small class="text-muted">
+                                Need An Account? <a class="ml-2" href="{{ url_for('register') }}">Sign Up Now</a>
+                            </small>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock content %}

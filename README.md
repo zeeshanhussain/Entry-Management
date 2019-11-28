@@ -16,8 +16,8 @@
 2. Clone the repo:
 
    ```bash
-   git clone https://github.com/
-   cd Entr
+   git clone https://github.com/zeeshanhussain/Entry-Management
+   cd Entry-Management
    ```
 3. Set up the virtual environment
 

@@ -13,23 +13,29 @@
 
 1. Install PIP with `sudo apt-get install python3-pip`
 
-2. Clone the repo:
+2. Install and Start MongoDB 
+   ```
+   sudo apt-get install -y mongodb-org
+   sudo service mongod start
+   ```
+
+3. Clone the repo:
 
    ```bash
    git clone https://github.com/zeeshanhussain/Entry-Management
    cd Entry-Management
    ```
-3. Set up the virtual environment
+4. Set up the virtual environment
 
    ```
    virtualenv venv
    .venv/bin/activate
    ```
-4. Install dependencies with
+5. Install dependencies with
    ```
    pip3 install -r requirements.txt
    ```
-5. Setup Environment Variables for Email and Sms services
+6. Setup Environment Variables for Email and Sms services
    ```
    #Smtp Configs
 
@@ -44,9 +50,9 @@
    TWILIO_NUMBER=+xxyyyyyyyyyy
    ```
 
-6. Run the server with `python3 app.py`
+7. Run the server with `python3 app.py`
 
-7. Navigate to http://localhost:5000
+8. Navigate to http://localhost:5000
 
 
 ## Database Structure
